@@ -1,20 +1,36 @@
-# NetFuse
+<p align="center">
+  <img src="docs/images/icon.png" width="128" height="128" alt="NetFuse icon">
+</p>
 
-**Use all your internet connections at once.** Plug in Ethernet, join Wi-Fi, connect
-your phone, and NetFuse splits big downloads across all of them, while browsing,
-games and calls stay on your main connection.
+<h1 align="center">NetFuse</h1>
 
-[![Latest release](https://img.shields.io/github/v/release/MrTabaOfficial/NetFuse?label=download)](https://github.com/MrTabaOfficial/NetFuse/releases/latest)
-![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-2f6fe4)
-![Free to use](https://img.shields.io/badge/license-freeware-7357f6)
-![Built with Rust](https://img.shields.io/badge/built%20with-Rust-dea584)
+<p align="center">
+  <b>Use all your internet connections at once.</b><br>
+  Plug in Ethernet, join Wi-Fi, connect your phone, and NetFuse splits big downloads
+  across all of them, while browsing, games and calls stay on your main connection.
+</p>
 
-NetFuse is free to use. It is closed source: this repository holds the downloads,
-documentation, license and security policy, not the source code.
+<p align="center">
+  <a href="https://github.com/MrTabaOfficial/NetFuse/releases/latest"><img src="https://img.shields.io/github/v/release/MrTabaOfficial/NetFuse?label=download" alt="Latest release"></a>
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-2f6fe4" alt="Windows 10/11 x64">
+  <img src="https://img.shields.io/badge/license-freeware-7357f6" alt="Free to use">
+  <img src="https://img.shields.io/badge/built%20with-Rust-dea584" alt="Built with Rust">
+</p>
 
-**[Download NetFuse 1.0.0](https://github.com/MrTabaOfficial/NetFuse/releases/latest)** ·
-[User guide](docs/USAGE.md) · [Security](SECURITY.md) · [Privacy](PRIVACY.md) ·
-[License](LICENSE) · [Changelog](CHANGELOG.md) · [Built with Rust](#built-with-rust)
+<p align="center">
+  <a href="https://github.com/MrTabaOfficial/NetFuse/releases/latest"><b>Download NetFuse 1.0.0</b></a> ·
+  <a href="docs/USAGE.md">User guide</a> ·
+  <a href="SECURITY.md">Security</a> ·
+  <a href="PRIVACY.md">Privacy</a> ·
+  <a href="LICENSE">License</a> ·
+  <a href="CHANGELOG.md">Changelog</a> ·
+  <a href="#built-with-rust">Built with Rust</a>
+</p>
+
+<p align="center">
+  <sub>Free to use. Closed source: this repository holds the downloads, documentation,
+  license and security policy, not the source code.</sub>
+</p>
 
 ## Features
 
