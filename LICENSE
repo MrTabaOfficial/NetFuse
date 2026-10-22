@@ -1,0 +1,106 @@
+NetFuse End-User License Agreement
+Version 1.0, 22 October 2026
+
+Copyright (c) 2026 MrTabaOfficial. All rights reserved.
+
+NetFuse is free to use. It is not open-source software: its source code is not
+published, and this agreement gives you no rights to it. By installing or using
+NetFuse you agree to these terms. If you do not agree, do not install or use it.
+
+1. WHAT YOU MAY DO
+
+   Free of charge, you may:
+   a. download, install and use NetFuse on any number of devices that you own or
+      control, for personal, educational or commercial purposes, including at
+      work;
+   b. make copies of the installer for backup;
+   c. give the unmodified official installer to others, free of charge, together
+      with this agreement. Where you can, point people to the official download
+      page instead.
+
+2. WHAT YOU MAY NOT DO
+
+   You may not:
+   a. sell, rent, lease or sublicense NetFuse, charge for it in any way, or
+      include it in a product or service that you sell;
+   b. modify, translate or adapt NetFuse, create derivative works of it, or
+      distribute modified copies;
+   c. reverse engineer, decompile or disassemble NetFuse, except where applicable
+      law expressly allows this despite this restriction;
+   d. remove or change any copyright, license or other notice in NetFuse;
+   e. use NetFuse to break the law or to use networks you are not authorised to
+      use.
+
+3. OPEN-SOURCE AND THIRD-PARTY COMPONENTS
+
+   NetFuse includes open-source components and the Wintun network driver. These
+   are licensed to you under their own terms, which are reproduced in the file
+   THIRD-PARTY-NOTICES.txt that is installed with NetFuse and published next to
+   each download. Those terms apply to those components, and nothing in this
+   agreement limits the rights they give you.
+
+4. OWNERSHIP
+
+   NetFuse is licensed, not sold. MrTabaOfficial keeps all rights, title and
+   interest in NetFuse, including its source code, design and name. All rights
+   not expressly granted in this agreement are reserved.
+
+5. HOW NETFUSE CHANGES YOUR COMPUTER'S NETWORKING
+
+   NetFuse runs with administrator rights. While Combined mode is on, it adds a
+   virtual network adapter and two network routes and passes internet traffic
+   through itself, sending each connection out over one of your networks. It
+   removes the adapter and routes when Combined mode is turned off, when NetFuse
+   quits or the computer signs out or shuts down, and on the next start after a
+   crash. Settings > Restore network removes them at any time.
+
+   You decide whether to use these features on your computer and networks. You
+   are responsible for following the terms of your internet and mobile data
+   providers, and for any data charges that result from using a network.
+
+6. PRIVACY
+
+   NetFuse has no accounts, no telemetry and no advertising, and it does not send
+   information about you or how you use it to the developer. Settings, download
+   history, data-usage counters and logs stay on your computer. To check whether
+   each network works, NetFuse opens a connection to public servers (by default
+   1.1.1.1 and 8.8.8.8, port 443) every 10 seconds without sending any data.
+
+7. UPDATES
+
+   Future versions of NetFuse may come with different terms. The terms delivered
+   with a version apply to that version.
+
+8. NO WARRANTY
+
+   NETFUSE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+   PARTICULAR PURPOSE, NON-INFRINGEMENT, OR THAT IT WILL WORK WITHOUT
+   INTERRUPTION OR ERRORS, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+
+9. LIMITATION OF LIABILITY
+
+   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MRTABAOFFICIAL WILL NOT BE
+   LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY
+   DAMAGES, OR FOR ANY LOSS OF DATA, CONNECTIVITY, PROFITS OR BUSINESS, OR FOR
+   DATA CHARGES, ARISING OUT OF OR RELATED TO NETFUSE OR THIS AGREEMENT, EVEN IF
+   ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. BECAUSE NETFUSE IS PROVIDED FREE
+   OF CHARGE, THE TOTAL LIABILITY OF MRTABAOFFICIAL UNDER THIS AGREEMENT IS
+   LIMITED TO THE AMOUNT YOU PAID FOR NETFUSE.
+
+   Some jurisdictions do not allow certain warranties or liabilities to be
+   excluded or limited. In those jurisdictions the exclusions and limits above
+   apply only as far as the law allows.
+
+10. TERMINATION
+
+   This agreement ends automatically if you break any of its terms. You must then
+   stop using NetFuse and delete all copies. Sections 3, 4, 8 and 9 continue to
+   apply after it ends.
+
+11. GENERAL
+
+   If any part of this agreement cannot be enforced, the rest remains in effect.
+   This agreement is the entire agreement between you and MrTabaOfficial about
+   NetFuse. Questions about these terms can be raised on the official NetFuse
+   GitHub page.

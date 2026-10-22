@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/MrTabaOfficial/NetFuse/security/advisories/new
+    about: Please report security problems privately, not as a public issue.
+  - name: User guide
+    url: https://github.com/MrTabaOfficial/NetFuse/blob/main/docs/USAGE.md
+    about: How every screen and setting works, and answers to common questions.
