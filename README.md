@@ -7,13 +7,14 @@ games and calls stay on your main connection.
 [![Latest release](https://img.shields.io/github/v/release/MrTabaOfficial/NetFuse?label=download)](https://github.com/MrTabaOfficial/NetFuse/releases/latest)
 ![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-2f6fe4)
 ![Free to use](https://img.shields.io/badge/license-freeware-7357f6)
+![Built with Rust](https://img.shields.io/badge/built%20with-Rust-dea584)
 
 NetFuse is free to use. It is closed source: this repository holds the downloads,
 documentation, license and security policy, not the source code.
 
 **[Download NetFuse 1.0.0](https://github.com/MrTabaOfficial/NetFuse/releases/latest)** ·
 [User guide](docs/USAGE.md) · [Security](SECURITY.md) · [Privacy](PRIVACY.md) ·
-[License](LICENSE) · [Changelog](CHANGELOG.md)
+[License](LICENSE) · [Changelog](CHANGELOG.md) · [Built with Rust](#built-with-rust)
 
 ## Features
 
@@ -137,6 +138,46 @@ different networks.
    Get-NetRoute -InterfaceAlias NetFuse -ErrorAction SilentlyContinue | Remove-NetRoute -Confirm:$false
    ```
 4. Restart the computer. NetFuse's adapter only exists while NetFuse runs.
+
+## Built with Rust
+
+The whole core of NetFuse is written in **Rust**: the network engine, the downloader,
+the rules and the desktop app around them. Only the window's interface is web
+technology.
+
+NetFuse sits in the path of your internet traffic and runs with administrator rights,
+which brings three requirements:
+
+- **Memory safety.** Code that handles network data with administrator rights is a
+  security risk if it has memory bugs. Rust rules out whole classes of them, such as
+  buffer overflows and use-after-free, when the code is compiled.
+- **Steady speed.** No garbage collector, so no pauses in the middle of a transfer, and
+  memory use stays low.
+- **Direct access to Windows.** Network adapters, routes, socket options and the
+  connection tables are used directly, with no extra runtime in between.
+
+What's inside:
+
+| Part | Built with |
+|---|---|
+| Network engine and downloader | Rust, with the Tokio asynchronous runtime |
+| Virtual network adapter | Wintun, through tun-rs |
+| Turning packets back into connections | ipstack, a TCP/UDP stack that runs inside NetFuse |
+| One network per connection | Sockets pinned to one adapter (`IP_UNICAST_IF`) |
+| Routes and app detection | The Windows IP Helper API and connection tables, without calling command-line tools |
+| Site names for rules | NetFuse's own parser for the TLS server name and the HTTP Host header |
+| Downloads over HTTPS | rustls with the ring crypto library; certificates are checked against Windows' own certificate store |
+| Name lookups | hickory-dns, sent through the main network |
+| Desktop app, tray, start at sign-in | Tauri 2, in Rust |
+| Interface | React and TypeScript, with charts drawn by NetFuse itself |
+
+**Tested.** About 100 automated tests cover network selection, the downloader
+(byte-for-byte file checks, resume, changed files), rule order, site detection from
+real TLS handshakes, the speed limits and the relay. A separate Linux test bed with two
+simulated internet providers checks Combined mode end to end, including recovery after
+the process is killed.
+
+**Small.** The installer is about 5 MB.
 
 ## Support
 
