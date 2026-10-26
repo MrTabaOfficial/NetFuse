@@ -7,7 +7,7 @@ reports are taken seriously.
 
 | Version | Security fixes |
 |---|---|
-| 1.0.x (latest) | Yes |
+| 1.1.x (latest) | Yes |
 | Older | No: please update first |
 
 ## Reporting a vulnerability
@@ -63,7 +63,7 @@ So you can judge the risk for yourself:
 - Each release lists the SHA256 checksum of every file in `SHA256SUMS.txt`. Check your
   download before installing:
   ```powershell
-  Get-FileHash .\NetFuse_1.0.0_x64-setup.exe -Algorithm SHA256
+  Get-FileHash .\NetFuse_1.1.0_x64-setup.exe -Algorithm SHA256
   ```
 - The installers aren't code-signed yet. Only download NetFuse from this repository's
   [Releases page](https://github.com/MrTabaOfficial/NetFuse/releases).

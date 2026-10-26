@@ -3,6 +3,7 @@
 ## Contents
 
 - [First start](#first-start)
+- [Network roles](#network-roles)
 - [Combined mode](#combined-mode)
 - [Rules](#rules)
 - [Connections](#connections)
@@ -24,19 +25,46 @@ On each card:
 - **★** marks the main network. By default that's the network Windows uses. Click the
   star on another card to choose a different one.
 - The **pencil** renames the network and changes its color.
-- **Use** includes or excludes the network from splitting.
+- The **role** menu says what the network is used for (see below).
 - Live download and upload speed, latency, and data used today.
 
 A network shows **No internet** when NetFuse's health check can't get through it, and
 then nothing is split onto it. A phone hotspot without mobile data looks connected in
 Windows but shows up here as having no internet.
 
+## Network roles
+
+Each network has a role, chosen with the menu on its card or in Settings > Networks:
+
+| Role | Everyday traffic (browsing, games, calls) | Downloads (boosted apps and sites, the downloader) |
+|---|---|---|
+| **Everyday + downloads** (default) | Yes | Yes |
+| **Everyday only** | Yes | Never |
+| **Downloads only** | Never | Yes |
+| **Not used** | Never | Never |
+
+**Example: Ethernet for everyday use, a phone hotspot for downloads.** Set Ethernet to
+**Everyday only** and Wi-Fi to **Downloads only**, then turn on Combined mode. Steam and
+other boosted downloads use Wi-Fi only, and Chrome, Discord and games use Ethernet only.
+
+- Roles are strict. If the download network drops (a hotspot losing signal), boosted
+  downloads wait and continue on it when it's back, instead of moving to Ethernet for
+  the rest of the download.
+- Only a network that allows everyday traffic can be the main network (★), and
+  fail-over only moves everyday traffic to such networks.
+- Roles apply to other apps only while **Combined mode is on**. With it off, Windows
+  decides as usual. The built-in downloader follows the roles either way.
+- Browser downloads use the same connections as browsing, so they go over the
+  everyday network. To send a particular download site over the download network, add
+  it to **Boost sites**, for example `*.githubusercontent.com`.
+
 ## Combined mode
 
 Turn it on with the big switch on the Dashboard, or from the tray menu.
 
-- Connections from **boost apps** and to **boost sites** are split across all usable
-  networks. Each new connection goes to whichever network is fastest at that moment.
+- Connections from **boost apps** and to **boost sites** are split across all networks
+  whose role allows downloads. Each new connection goes to whichever of them is fastest
+  at that moment.
 - Everything else uses the **main network**, as without NetFuse.
 - Addresses on a network's own local network (your router, a NAS, a printer) always
   go through that network.
@@ -117,7 +145,9 @@ downloads together, so servers aren't overloaded.
 
 ## Settings
 
-- **Main network:** Automatic (follows Windows) or a fixed network.
+- **Main network:** Automatic (follows Windows) or a fixed network. Only networks whose
+  role allows everyday traffic can be main.
+- **Per network role:** the same menu as on the Dashboard cards.
 - **Fail-over:** if the main network goes down, main traffic moves to another network.
 - **Per network:** a download speed limit and a data allowance per day, week or month.
   A network that has used its allowance is no longer used for splitting or downloads,
@@ -165,6 +195,17 @@ A single connection always uses one network, because the server sees its address
 that open many connections (Steam, most game launchers, torrent clients) get faster in
 Combined mode because their connections are spread. For a single big file, use the
 built-in downloader, which splits the file itself.
+
+**Does Combined mode have to be on?**
+For Steam, launchers, browsers and every other app: yes. Without it, NetFuse doesn't
+touch other apps' traffic. NetFuse's own Downloads screen works either way.
+
+**Browsing gets slow while a download runs.**
+Give the download its own network: set your main connection to **Everyday only** and
+the other to **Downloads only** (see [Network roles](#network-roles)). Other programs
+can also download on your everyday line, for example the Xbox app or Microsoft Store
+(`gamingservices.exe`) or OneDrive. Add them to **Boost apps** to move their downloads
+to the download network.
 
 **Why doesn't my speed add up?**
 Two adapters connected to the same router share the same internet line. The networks

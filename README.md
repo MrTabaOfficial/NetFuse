@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MrTabaOfficial/NetFuse/releases/latest"><b>Download NetFuse 1.0.0</b></a> ·
+  <a href="https://github.com/MrTabaOfficial/NetFuse/releases/latest"><b>Download NetFuse 1.1.0</b></a> ·
   <a href="docs/USAGE.md">User guide</a> ·
   <a href="SECURITY.md">Security</a> ·
   <a href="PRIVACY.md">Privacy</a> ·
@@ -64,11 +64,19 @@
 - Connections screen: every busy connection's app, site, network and route.
 - Download details: speed per network and a block map colored by network.
 
+**Network roles**
+- Give each network a job: **Everyday + downloads**, **Everyday only**, **Downloads only**
+  or **Not used**.
+- For example Ethernet for browsing, games and calls, and a phone hotspot only for
+  downloads, so a big Steam download never slows down your browsing line.
+- Roles are strict: if the download network drops, downloads wait for it instead of
+  moving onto your everyday network.
+
 **Control**
 - Choose the main network, or follow Windows. Optional fail-over if it goes down.
 - Speed limit per network and in total, plus **Slow mode** (2 MB/s).
 - Data allowance per network per day, week or month.
-- Rename and color your networks; switch any network off for splitting.
+- Rename and color your networks.
 
 **Safe and tidy**
 - Never changes your adapters, DNS or default routes; adds two routes only while
@@ -89,12 +97,12 @@
 
 ## Install
 
-1. Download `NetFuse_1.0.0_x64-setup.exe` (or `NetFuse_1.0.0_x64_en-US.msi`) from the
+1. Download `NetFuse_1.1.0_x64-setup.exe` (or `NetFuse_1.1.0_x64_en-US.msi`) from the
    [latest release](https://github.com/MrTabaOfficial/NetFuse/releases/latest).
 2. Optional but recommended: check the download against `SHA256SUMS.txt` from the same
    release:
    ```powershell
-   Get-FileHash .\NetFuse_1.0.0_x64-setup.exe -Algorithm SHA256
+   Get-FileHash .\NetFuse_1.1.0_x64-setup.exe -Algorithm SHA256
    ```
 3. Run the installer and accept the license. The installers are not code-signed yet,
    so Windows SmartScreen may say "Windows protected your PC": click **More info**,
@@ -106,16 +114,18 @@
 1. **Start NetFuse** and allow administrator rights. The **Dashboard** shows a card for
    each connected network. The ★ marks your main network; click another card's ★ to
    change it.
-2. **Add rules** on the **Rules** screen. The quickest start is a preset (**Steam**,
+2. **Optional: give your networks roles.** Use the menu at the bottom of each network
+   card, for example Ethernet **Everyday only** and Wi-Fi **Downloads only**.
+3. **Add rules** on the **Rules** screen. The quickest start is a preset (**Steam**,
    **Epic** or **Torrent**), or add an app such as `steam.exe` under **Boost apps**.
-3. **Turn on Combined mode** with the big switch on the Dashboard, or from the tray
+4. **Turn on Combined mode** with the big switch on the Dashboard, or from the tray
    menu.
-4. **Start your download** in Steam or another boosted app. On **Connections** you see
+5. **Start your download** in Steam or another boosted app. On **Connections** you see
    its connections marked **Split**, spread across your networks, while everything else
    says **Main**.
-5. **For a single big file**, open **Downloads**, click **New download** and paste the
+6. **For a single big file**, open **Downloads**, click **New download** and paste the
    link. The file is fetched over all networks at once.
-6. **When you're done**, turn Combined mode off. Closing the window keeps NetFuse in the
+7. **When you're done**, turn Combined mode off. Closing the window keeps NetFuse in the
    tray; **Quit** in the tray menu exits and turns Combined mode off.
 
 The [user guide](docs/USAGE.md) explains every screen and setting, the order in which
